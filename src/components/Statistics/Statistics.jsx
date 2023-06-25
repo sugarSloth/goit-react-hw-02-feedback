@@ -7,10 +7,6 @@ export default function Statistics({ props, total, percentage }) {
 
   return (
     <React.Fragment>
-      {total() < 1 ? (
-        <p className={styles.descr}>No feedback given</p>
-      ) : (
-        <React.Fragment>
           {options.map(([option, value]) => (
             <li key={option} className={styles.item}>
               {option}: <span className={styles.number}>{value}</span>
@@ -23,8 +19,7 @@ export default function Statistics({ props, total, percentage }) {
             Positive feedback: <span className={styles.number}>{percentage()}%</span>
           </li>
         </React.Fragment>
-      )}
-    </React.Fragment>
+    
   );
 }
 
